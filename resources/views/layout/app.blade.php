@@ -43,14 +43,18 @@
                     <a class="nav-link font-weight-bold" href="">Post</a>
                 </div>
                 <div class="navbar-nav align-self-end ml-auto">
-                    <a class="nav-link font-weight-bold" href="#">Alex</a>
-                    <form action="" method="post">
-                        @csrf
-                        <button class="submit_btn" type="submit">Logout</button>
-                    </form>
+                    @auth
+                        <a class="nav-link font-weight-bold" href="#">Alex</a>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="submit_btn" type="submit">Logout</button>
+                        </form>
+                    @endauth
 
-                    <a class="nav-link font-weight-bold" href="{{ route('register') }}">Register</a>
-                    <a class="nav-link font-weight-bold" href="">Login</a>
+                    @guest
+                        <a class="nav-link font-weight-bold" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link font-weight-bold" href="{{ route('login') }}">Login</a>
+                    @endguest
 
                 </div>
             </div>
