@@ -37,23 +37,34 @@
             </button>
             <div class="collapse navbar-collapse pl-3 pr-3" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active font-weight-bold" href="/">Home <span
+                    <a class="nav-link active font-weight-bold" href="{{ route('home') }}">{{ __('Home') }} <span
                             class="sr-only">(current)</span></a>
-                    <a class="nav-link font-weight-bold" href="">Dashboard</a>
-                    <a class="nav-link font-weight-bold" href="">Post</a>
+                    <a class="nav-link font-weight-bold" href="">{{ __('Dashboard') }}</a>
+                    <a class="nav-link font-weight-bold" href="">{{ __('Post') }}</a>
+
+                    <div class="dropdown ml-4">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ app()->getLocale() == 'bn' ? 'বাংলা' : 'English' }}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('home', [], true, 'en') }}">English</a>
+                            <a class="dropdown-item" href="{{ route('home', [], true, 'bn') }}">বাংলা</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="navbar-nav align-self-end ml-auto">
                     @auth
-                        <a class="nav-link font-weight-bold" href="#">Alex</a>
+                        <a class="nav-link font-weight-bold" href="#">{{ Auth::user()->name }}</a>
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button class="submit_btn" type="submit">Logout</button>
+                            <button class="submit_btn" type="submit">{{ __('Log out') }}</button>
                         </form>
                     @endauth
 
                     @guest
-                        <a class="nav-link font-weight-bold" href="{{ route('register') }}">Register</a>
-                        <a class="nav-link font-weight-bold" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link font-weight-bold" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                     @endguest
 
                 </div>

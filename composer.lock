@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c61ff82cbf0142a401a48a8161e1595a",
+    "content-hash": "61e5a86365d863d6a220364fdbb51330",
     "packages": [
+        {
+            "name": "0.0.0/composer-include-files",
+            "version": "1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hopeseekr-contribs/composer-include-files.git",
+                "reference": "0e77aa7a723ac7a32a6b4f4ce4666872a642e845"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hopeseekr-contribs/composer-include-files/zipball/0e77aa7a723ac7a32a6b4f4ce4666872a642e845",
+                "reference": "0e77aa7a723ac7a32a6b4f4ce4666872a642e845",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ComposerIncludeFiles\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ComposerIncludeFiles\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Robertson",
+                    "email": "funkjedi@gmail.com"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "email": "theodore@phpexperts.pro"
+                }
+            ],
+            "description": "Include files at a higher priority than autoload files. Useful for overriding Laravel helpers.",
+            "homepage": "https://github.com/funkjedi/composer-include-files",
+            "keywords": [
+                "autoload",
+                "composer"
+            ],
+            "support": {
+                "source": "https://github.com/hopeseekr-contribs/composer-include-files/tree/1.6.1"
+            },
+            "time": "2022-06-18T07:04:13+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.1.1",
@@ -61,6 +115,91 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.1.1"
             },
             "time": "2022-01-18T09:12:03+00:00"
+        },
+        {
+            "name": "astrotomic/laravel-translatable",
+            "version": "v11.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Astrotomic/laravel-translatable.git",
+                "reference": "d853a3c34be42941dc83c5cddd9e1e98c71abae1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Astrotomic/laravel-translatable/zipball/d853a3c34be42941dc83c5cddd9e1e98c71abae1",
+                "reference": "d853a3c34be42941dc83c5cddd9e1e98c71abae1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.8.* || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/database": "5.8.* || ^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "5.8.* || ^6.0 || ^7.0 || ^8.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.8.* || ^4.0 || ^5.0 || ^6.0",
+                "phpunit/phpunit": "^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Astrotomic\\Translatable\\TranslatableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Astrotomic\\Translatable\\": "src/Translatable/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Witkowski",
+                    "email": "gummibeer@astrotomic.info",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dimitrios Savvopoulos",
+                    "email": "ds@dimsav.com",
+                    "homepage": "http://dimsav.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package for multilingual models",
+            "homepage": "https://astrotomic.info",
+            "keywords": [
+                "database",
+                "language",
+                "laravel",
+                "translation"
+            ],
+            "support": {
+                "docs": "https://docs.astrotomic.info/laravel-translatable",
+                "email": "dev@astrotomic.info",
+                "issues": "https://github.com/Astrotomic/laravel-translatable/issues",
+                "source": "https://github.com/Astrotomic/laravel-translatable"
+            },
+            "funding": [
+                {
+                    "url": "https://offset.earth/treeware",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Gummibeer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://issuehunt.io/r/astrotomic",
+                    "type": "issuehunt"
+                }
+            ],
+            "time": "2020-11-19T14:10:38+00:00"
         },
         {
             "name": "brick/math",
@@ -121,6 +260,232 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "codezero/browser-locale",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codezero-be/browser-locale.git",
+                "reference": "a3fd02af7325a16cd7d8590f16cb29bd5ee9e221"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codezero-be/browser-locale/zipball/a3fd02af7325a16cd7d8590f16cb29bd5ee9e221",
+                "reference": "a3fd02af7325a16cd7d8590f16cb29bd5ee9e221",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0|^9.0",
+                "mockery/mockery": "^1.3.3",
+                "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeZero\\BrowserLocale\\Laravel\\BrowserLocaleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeZero\\BrowserLocale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Vermeyen",
+                    "email": "ivan@codezero.be"
+                }
+            ],
+            "description": "Get the most preferred locales from your visitor's browser.",
+            "keywords": [
+                "browser",
+                "country",
+                "detect",
+                "language",
+                "locale",
+                "php",
+                "website"
+            ],
+            "support": {
+                "issues": "https://github.com/codezero-be/browser-locale/issues",
+                "source": "https://github.com/codezero-be/browser-locale/tree/3.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/ivanvermeyen",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/ivanvermeyen",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2022-02-19T11:20:11+00:00"
+        },
+        {
+            "name": "codezero/laravel-localized-routes",
+            "version": "2.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codezero-be/laravel-localized-routes.git",
+                "reference": "6e77ffda1e331874a4682e407c081dc998ee5be8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codezero-be/laravel-localized-routes/zipball/6e77ffda1e331874a4682e407c081dc998ee5be8",
+                "reference": "6e77ffda1e331874a4682e407c081dc998ee5be8",
+                "shasum": ""
+            },
+            "require": {
+                "0.0.0/composer-include-files": "^1.5",
+                "codezero/laravel-localizer": "^1.1",
+                "illuminate/support": "^5.6|^6.0|^7.0|^8.0|^9.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench": "^3.6|^4.0|^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeZero\\LocalizedRoutes\\LocalizedRoutesServiceProvider"
+                    ]
+                },
+                "include_files": [
+                    "src/helpers.php"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeZero\\LocalizedRoutes\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Vermeyen",
+                    "email": "ivan@codezero.be"
+                }
+            ],
+            "description": "A convenient way to set up, manage and use localized routes in a Laravel app.",
+            "keywords": [
+                "country",
+                "language",
+                "laravel",
+                "locale",
+                "localization",
+                "php",
+                "routes",
+                "routing",
+                "translation"
+            ],
+            "support": {
+                "issues": "https://github.com/codezero-be/laravel-localized-routes/issues",
+                "source": "https://github.com/codezero-be/laravel-localized-routes/tree/2.7.3"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/ivanvermeyen",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/ivanvermeyen",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2022-07-14T10:40:44+00:00"
+        },
+        {
+            "name": "codezero/laravel-localizer",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codezero-be/laravel-localizer.git",
+                "reference": "4629882fd2491acb0883060e1129d349eb6cc40f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codezero-be/laravel-localizer/zipball/4629882fd2491acb0883060e1129d349eb6cc40f",
+                "reference": "4629882fd2491acb0883060e1129d349eb6cc40f",
+                "shasum": ""
+            },
+            "require": {
+                "codezero/browser-locale": "^3.0",
+                "illuminate/support": "^5.6|^6.0|^7.0|^8.0|^9.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench": "^3.6|^4.0|^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeZero\\Localizer\\LocalizerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeZero\\Localizer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Vermeyen",
+                    "email": "ivan@codezero.be"
+                }
+            ],
+            "description": "Automatically detect and set an app locale that matches your visitor's preference.",
+            "keywords": [
+                "browser",
+                "cookie",
+                "country",
+                "detect",
+                "language",
+                "laravel",
+                "locale",
+                "localization",
+                "php",
+                "session"
+            ],
+            "support": {
+                "issues": "https://github.com/codezero-be/laravel-localizer/issues",
+                "source": "https://github.com/codezero-be/laravel-localizer/tree/1.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/ivanvermeyen",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/ivanvermeyen",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2022-02-02T13:35:31+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1324,16 +1689,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "0da1dca5781dd3cfddbe328224d9a7a62571addc"
+                "reference": "155ec1c95626b16fda0889cf15904d24890a60d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/0da1dca5781dd3cfddbe328224d9a7a62571addc",
-                "reference": "0da1dca5781dd3cfddbe328224d9a7a62571addc",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/155ec1c95626b16fda0889cf15904d24890a60d5",
+                "reference": "155ec1c95626b16fda0889cf15904d24890a60d5",
                 "shasum": ""
             },
             "require": {
@@ -1426,7 +1791,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-07T21:28:26+00:00"
+            "time": "2022-07-17T16:25:47+00:00"
         },
         {
             "name": "league/config",
@@ -5858,6 +6223,82 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "laravel-lang/lang",
+            "version": "11.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Lang/lang.git",
+                "reference": "c0c6f0c7261f2742280a0075f5aa4c6aea7b4726"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/c0c6f0c7261f2742280a0075f5aa4c6aea7b4726",
+                "reference": "c0c6f0c7261f2742280a0075f5aa4c6aea7b4726",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "conflict": {
+                "laravel-lang/publisher": "<14.0"
+            },
+            "require-dev": {
+                "laravel-lang/publisher": "^14.0",
+                "laravel-lang/status-generator": "^1.3.7",
+                "php": "^8.1",
+                "phpunit/phpunit": "^9.5",
+                "symfony/var-dumper": "^5.0 || ^6.0"
+            },
+            "suggest": {
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "laravel-lang/attributes": "Translations for field names of the forms",
+                "laravel-lang/http-statuses": "Translations for HTTP statuses",
+                "laravel-lang/publisher": "Easy installation and update of translation files for your project",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelLang\\Lang\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelLang\\Lang\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laravel-Lang Team",
+                    "homepage": "https://github.com/Laravel-Lang"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "support": {
+                "issues": "https://github.com/Laravel-Lang/lang/issues",
+                "source": "https://github.com/Laravel-Lang/lang"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/laravel-lang",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2022-07-13T10:11:31+00:00"
         },
         {
             "name": "laravel/sail",

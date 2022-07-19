@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
@@ -17,20 +18,22 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::localized(function () {
+    Route::get(Lang::uri('/'), function () {
+        return view('home');
+    })->name('home');
 
-// User Registration Route
-Route::get('register', [RegisterController::class, 'index'])->name('register');
-Route::post('register', [RegisterController::class, 'store']);
+    Route::get(Lang::uri('dashboard'), [DashboardController::class, 'index'])->name('dashboard');
+    // User Registration Route
+    Route::get(Lang::uri('register'), [RegisterController::class, 'index'])->name('register');
+    Route::post('register', [RegisterController::class, 'store']);
 
-// Login and Logout Route
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'store']);
-Route::post('logout', [LogoutController::class, 'store'])->name('logout');
+    // Login and Logout Route
+    Route::get(Lang::uri('login'), [LoginController::class, 'index'])->name('login');
+    Route::post('login', [LoginController::class, 'store']);
+    Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/posts', function () {
-    return view('posts.index');
+    Route::get('/posts', function () {
+        return view('posts.index');
+    });
 });
