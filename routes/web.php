@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,8 @@ Route::localized(function () {
     Route::post('login', [LoginController::class, 'store']);
     Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 
-    Route::get('/posts', function () {
-        return view('posts.index');
-    });
+    Route::get(Lang::uri('posts'), [PostController::class, 'index'])->name('posts');
+    Route::post('posts', [PostController::class, 'create']);
+    Route::get(Lang::uri('posts/{id}/show'), [PostController::class, 'show'])->name('posts.show');
+    Route::delete(Lang::uri('posts/{post}/delete'), [PostController::class, 'destroy'])->name('posts.destroy');
 });

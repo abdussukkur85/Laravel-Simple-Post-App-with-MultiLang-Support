@@ -768,7 +768,14 @@
     "Choose a Password" : "পাসওয়ার্ড নির্বাচন করুন",
     "Repeat Your Password" : "পুনরায় পাসওয়ার্ড নির্বাচন করুন",
     "Log out" : "লগ আউট",
-    "Your Password" : "আপনার পাসওয়ার্ড"
+    "Your Password" : "আপনার পাসওয়ার্ড",
 
-    
+    "bn" : "বাংলায়",
+    "BN" : "বাংলায়",
+    "en" : "ইংরেজিতে",
+    "EN" : "ইংরেজিতে",
+    "Post Title": "পোষ্টের শিরোনাম",
+    "Post Description" : "পোষ্টের বর্ণনা",
+    "Write Something!": "কিছু লিখুন!",
+    "Save Post" : "পোস্ট সংরক্ষণ করুন"
 }
