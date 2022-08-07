@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostLikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,6 @@ Route::localized(function () {
     Route::post('posts', [PostController::class, 'create']);
     Route::get(Lang::uri('posts/{id}/show'), [PostController::class, 'show'])->name('posts.show');
     Route::delete(Lang::uri('posts/{post}/delete'), [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::post(Lang::uri('posts/{post}/like'), [PostLikeController::class, 'like'])->name('posts.likes');
+    Route::delete(Lang::uri('posts/{post}/like'), [PostLikeController::class, 'destroy']);
 });

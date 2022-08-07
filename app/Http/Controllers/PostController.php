@@ -11,14 +11,18 @@ use Astrotomic\Translatable\Validation\RuleFactory;
 
 class PostController extends Controller {
     public function index() {
-        $posts = Post::translatedIn(app()->getLocale())->latest()->paginate(2);
+        $posts = Post::with(['user', 'likes'])
+            ->withTranslation()
+            ->translatedIn(app()
+                ->getLocale())
+            ->orderBy('created_at', 'desc')
+            ->paginate(2);
+
         return view('posts.index', compact('posts'));
     }
 
     public function create(StorePostRequest $request) {
 
-
-        Post::create($request->validate());
         $post = new Post();
         $post->user_id = Auth::user()->id;
         $post->save();
@@ -40,5 +44,14 @@ class PostController extends Controller {
 
         return Post::translatedIn(app()->getLocale())->findOrFail($id);
         return view('posts.show', compact('post'));
+    }
+
+    public function destroy(Post $post) {
+
+        if (!$post->ownedBy(Auth::user())) {
+            return redirect()->back()->withErrors('You don\'t have any permission to delete the post');
+        }
+        $post->delete();
+        return back();
     }
 }

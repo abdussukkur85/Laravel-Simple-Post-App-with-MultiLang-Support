@@ -38,6 +38,17 @@
                 </div>
             @endif
 
+            @if (Session::get('errors'))
+                <div class="col-md-8 offset-md-2 mt-3">
+                    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        {{ Session::get('errors')->first() }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            @endif
+
             <div class="col-md-8 offset-md-2 bg-light mt-3 br-5 rounded p-4">
                 @auth
                     <form action="{{ route('posts') }}" method="POST">
@@ -72,53 +83,50 @@
                         <button type="submit" class="btn btn-primary">{{ __('Save Post') }}</button>
                     </form>
                 @endauth
+
                 @if ($posts->count())
                     @foreach ($posts as $post)
                         <div class="post mt-4">
-                            <p class="mb-0"><b><i><u>Witter:</u></i></b> <a class="user-profile"
+                            <p class="mb-0"><b><i><u>{{ __('Written By') }}:</u></i></b> <a class="user-profile"
                                     href=""><b>{{ $post->user->name }}</b></a>
                                 <span><i>{{ $post->created_at->diffForHumans() }}</i></span>
                             </p>
                             <a href="{{ route('posts.show', $post->id) }}">
-                                <p class="mb-0"><b><i><u>Title:</u></i></b> {{ $post->title }}</p>
+                                <p class="mb-0"><b><i><u>{{ __('Title') }}:</u></i></b> {{ $post->title }}</p>
                             </a>
-                            {{-- <p class="mb-0"><b><i><u>Description:</u></i></b> --}}
-                            {{-- {{ Str::limit($post->description, 5, $end = '') }}</p> --}}
-                            <b><i><u>Description:</u></i></b>
-                            {{ Str::limit($post->description, 100,'') }}
+                            <b><i><u>{{ __('Description') }}:</u></i></b>
+                            {{ Str::limit($post->description, 100, '') }}
                             @if (Str::length($post->description) > 100)
                                 <a href="{{ route('posts.show', [$post->id]) }}" class="text-primary">Read
                                     More...</a>
                             @endif
-                            {{-- @if (strlen(strip_tags($post->body)) > 50)
-                                ... <a href="#" class="btn btn-info btn-sm">Read More</a>
-                            @endif --}}
                             @auth
-                                {{-- @if ($post->ownedBy(auth()->user()))
-                                    <form action="{{ route('posts.delete', $post->id) }}" method="post">
+                                @if ($post->ownedBy(auth()->user()))
+                                    <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="delete" type="submit">Delete</button>
+                                        <button class="delete" type="submit">{{ __('Delete') }}</button>
                                     </form>
-                                @endif --}}
+                                @endif
                             @endauth
-                            {{-- <div class="d-flex">
+                            <div class="d-flex">
                                 @auth
                                     @if (!$post->likedBy(auth()->user()))
                                         <form action="{{ route('posts.likes', $post->id) }}" method="post">
                                             @csrf
-                                            <button class="like_btn" type="submit">Like</button>
+                                            <button class="like_btn" type="submit"> <i class="fas fa-thumbs-up"></i></button>
                                         </form>
                                     @else
-                                        <form action="{{ route('posts.likes', $post->id) }}" method="post">
+                                        <form action="{{ route('posts.likes', $post) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="like_btn" type="submit">Unlike</button>
+                                            <button class="like_btn" type="submit"><i class="fas fa-thumbs-down"></i></button>
                                         </form>
                                     @endif
                                 @endauth
-                                <p>{{ $post->likes->count() }} {{ \Str::plural('Like', $post->likes->count()) }}</p>
-                            </div> --}}
+                                <p>{{ __($post->likes->count()) }} {{ __(\Str::plural('Like', $post->likes->count())) }}
+                                </p>
+                            </div>
 
                         </div>
                     @endforeach
