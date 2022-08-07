@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\UserPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::localized(function () {
     })->name('home');
 
     Route::get(Lang::uri('dashboard'), [DashboardController::class, 'index'])->name('dashboard');
+
     // User Registration Route
     Route::get(Lang::uri('register'), [RegisterController::class, 'index'])->name('register');
     Route::post('register', [RegisterController::class, 'store']);
@@ -41,4 +43,7 @@ Route::localized(function () {
     Route::delete(Lang::uri('posts/{post}/delete'), [PostController::class, 'destroy'])->name('posts.destroy');
     Route::post(Lang::uri('posts/{post}/like'), [PostLikeController::class, 'like'])->name('posts.likes');
     Route::delete(Lang::uri('posts/{post}/like'), [PostLikeController::class, 'destroy']);
+
+    // User Posts
+    Route::get(Lang::uri('user/{user:username}/posts'), [UserPostController::class, 'index'])->name('user.posts');
 });

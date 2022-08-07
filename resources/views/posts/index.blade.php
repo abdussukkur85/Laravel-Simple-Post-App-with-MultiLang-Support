@@ -21,6 +21,10 @@
             text-decoration: none;
             color: #000;
         }
+
+        .username {
+            text-transform: capitalize
+        }
     </style>
 @endpush
 @section('title', 'Post Create')
@@ -88,7 +92,8 @@
                     @foreach ($posts as $post)
                         <div class="post mt-4">
                             <p class="mb-0"><b><i><u>{{ __('Written By') }}:</u></i></b> <a class="user-profile"
-                                    href=""><b>{{ $post->user->name }}</b></a>
+                                    href="{{ route('user.posts', $post->user) }}"><b
+                                        class="username">{{ $post->user->name }}</b></a>
                                 <span><i>{{ $post->created_at->diffForHumans() }}</i></span>
                             </p>
                             <a href="{{ route('posts.show', $post->id) }}">
@@ -120,7 +125,8 @@
                                         <form action="{{ route('posts.likes', $post) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="like_btn" type="submit"><i class="fas fa-thumbs-down"></i></button>
+                                            <button class="like_btn" type="submit"><i class="fas fa-thumbs-down"
+                                                    onclick="return confirm('Are you sure you want to Delete?')"></i></button>
                                         </form>
                                     @endif
                                 @endauth

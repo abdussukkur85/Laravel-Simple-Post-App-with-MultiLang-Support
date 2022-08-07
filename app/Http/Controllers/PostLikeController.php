@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostLikeController extends Controller {
     public function like(Post $post, Request $request) {
+        if (!Auth::user()) {
+            return redirect()->route('login');
+        }
         if ($post->likedBy($request->user())) {
             return redirect()->back()->withErrors("You already liked the post");
         }
