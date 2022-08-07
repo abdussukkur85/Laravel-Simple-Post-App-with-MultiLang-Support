@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -26,7 +25,6 @@ Route::localized(function () {
         return view('home');
     })->name('home');
 
-    Route::get(Lang::uri('dashboard'), [DashboardController::class, 'index'])->name('dashboard');
 
     // User Registration Route
     Route::get(Lang::uri('register'), [RegisterController::class, 'index'])->name('register');

@@ -42,7 +42,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active font-weight-bold" href="{{ route('home') }}">{{ __('Home') }} <span
                             class="sr-only">(current)</span></a>
-                    <a class="nav-link font-weight-bold" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
+
                     <a class="nav-link font-weight-bold" href="{{ route('posts') }}">{{ __('Post') }}</a>
 
                     <div class="dropdown ml-4">

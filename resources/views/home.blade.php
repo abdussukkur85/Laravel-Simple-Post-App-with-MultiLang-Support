@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 bg-light mt-3 br-5 rounded p-3">
-                Home
+                {{ __('Home Page') }}
             </div>
         </div>
     </div>

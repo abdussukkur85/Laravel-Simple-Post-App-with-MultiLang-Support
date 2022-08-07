@@ -42,7 +42,7 @@ class PostController extends Controller {
 
     public function show($id) {
 
-        return Post::translatedIn(app()->getLocale())->findOrFail($id);
+        $post = Post::translatedIn(app()->getLocale())->findOrFail($id);
         return view('posts.show', compact('post'));
     }
 
