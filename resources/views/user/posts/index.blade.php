@@ -56,7 +56,7 @@
                                 <a href="{{ route('posts.show', [$post->id]) }}" class="text-primary">Read
                                     More...</a>
                             @endif
-                            @if ($post->ownedBy(Auth::user()))
+                            @if (Auth::user() && $post->ownedBy(Auth::user()))
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
