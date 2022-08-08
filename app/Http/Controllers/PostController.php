@@ -29,11 +29,9 @@ class PostController extends Controller {
         foreach (config('translatable.locales') as $locale) {
             $post_translation = new PostTranslation();
             $post_translation->post_id = $post->id;
-            $post_translation->title = $request->$locale{
-                'title'};
+            $post_translation->title = $request->$locale['title'];
             $post_translation->locale = $locale;
-            $post_translation->description = $request->$locale{
-                'description'};
+            $post_translation->description = $request->$locale['description'];
             $post_translation->save();
         }
 
