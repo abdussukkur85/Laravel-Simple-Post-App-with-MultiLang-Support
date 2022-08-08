@@ -41,7 +41,7 @@
                     <p class="mb-0"><b><i><u>{{ __('Title') }}:</u></i></b> {{ $post->title }}</p>
                     <b><i><u>{{ __('Description') }}:</u></i></b>
                     {{ $post->description }}
-                    @if ($post->ownedBy(Auth::user()))
+                    @if (Auth::user() && $post->ownedBy(Auth::user()))
                         <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                             @csrf
                             @method('DELETE')
