@@ -55,7 +55,7 @@
 
             <div class="col-md-8 offset-md-2 bg-light mt-3 br-5 rounded p-4">
                 @auth
-                    <form action="{{ route('posts') }}" method="POST">
+                    <form action="{{ route('posts.index') }}" method="POST">
                         @csrf
 
                         @foreach (config('translatable.locales') as $locale)
